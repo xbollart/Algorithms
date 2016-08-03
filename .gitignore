@@ -1,0 +1,16 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/HanoiTowers/bin/Debug
+/HanoiTowers/obj/Debug
+/SortingAlgo/BubbleSort/bin/Debug
+/SortingAlgo/BubbleSort/obj/Debug
+/HanoiTowers/.vs
+/SortingAlgo/.vs/SortingAlgo/v14
+/SortingAlgo/InsertionSort/bin/Debug
+/SortingAlgo/InsertionSort/obj/Debug
+/SortingAlgo/MergeSort/bin/Debug
+/SortingAlgo/MergeSort/obj/Debug
+/SortingAlgo/QuickSort/bin/Debug
+/SortingAlgo/QuickSort/obj/Debug
