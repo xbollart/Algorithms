@@ -1,0 +1,45 @@
+Closest Temperature
+
+public static int ClosestToZero(int[] ints)      
+{
+    int a = 2147483647;
+    for(int i = 0; i< ints.Length -1; i++)
+    {
+        if(Math.Abs(a) > Math.Abs(ints[i]))
+        {
+            a = ints[i];
+        }
+        else if (a+ ints[i] == 0)
+        {
+            a= Math.Max(a, ints[i]);
+        } 
+    }
+    return a
+}
+
+static public bool CheckFormula(string str)
+{
+    Stack<char> stack = new Stack<char>();
+
+    for(int i =0; i<str.Length;i++)
+    { 
+        if (str[i ] == '(' || str[i] == '[')
+        {
+            stack.Push(str[i]);
+        }
+        else if(str[i ] == ')' || str[i] == ']')
+        {
+            char last = stack.Pop();
+
+            if(last == '(' && str[i] ==']')
+                return false;
+
+            if(last == '[' && str[i] ==')')
+                return false;
+        }
+    }
+    if(stack.Count != 0)
+        return false;
+
+    return true;
+}
