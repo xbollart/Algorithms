@@ -60,3 +60,16 @@ private static bool CheckAnagram(string s1, string s2)
         return true;
     else return false;
 }
+
+private static bool CheckPalindrome(string s1)
+{
+
+    char[] arr_s1 = s1.ToCharArray();
+    Array.Reverse(arr_s1);
+
+    string s2 = new String(arr_s1);
+    if (s1 == s2)
+        return true;
+    else
+        return false;
+}
