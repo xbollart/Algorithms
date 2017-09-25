@@ -17,7 +17,7 @@ public static int ClosestToZero(int[] ints)
     return a
 }
 
-static public bool CheckFormula(string str)
+public static bool CheckFormula(string str)
 {
     Stack<char> stack = new Stack<char>();
 
@@ -42,4 +42,21 @@ static public bool CheckFormula(string str)
         return false;
 
     return true;
+}
+
+private static bool CheckAnagram(string s1, string s2)
+{
+
+    char[] arr_s1 = s1.ToCharArray();
+    char[] arr_s2 = s2.ToCharArray();
+
+    Array.Sort(arr_s1);
+    Array.Sort(arr_s2);
+
+    string conv_s1 = new string(arr_s1);
+    string conv_s2 = new string(arr_s2);
+
+    if (conv_s1 == conv_s2)
+        return true;
+    else return false;
 }
