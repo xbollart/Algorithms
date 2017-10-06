@@ -1,0 +1,38 @@
+using System;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Start");
+            LongProcess(10);
+            Console.WriteLine("Stop");
+            Console.ReadLine();
+        }
+
+        private static async Task LongProcess(int nbIter)
+        {
+            int[] ids = new int[nbIter];
+            for (int i = 0; i < ids.Length; i++)
+            {
+                ids[i] = i + 1;
+            }
+
+            Parallel.ForEach(ids, i => SendRequest(i).Wait());
+            Console.WriteLine("leave async method");
+        }
+
+        public static async Task SendRequest(int i)
+        {
+            Console.WriteLine($"enter task: {i}");
+            Thread.Sleep(5000);
+            Console.WriteLine($"leave task: {i}");
+        }
+
+    }
+}
